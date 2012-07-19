@@ -234,25 +234,25 @@ TESTS = $(check_SCRIPTS) $(check_PROGRAMS)
 INCLUDES = -I$(top_srcdir)/src
 
 fatest_SOURCES = fatest.c cutest.c cutest.h $(top_srcdir)/src/memory.c $(top_srcdir)/src/memory.h
-fatest_LDADD = $(top_builddir)/src/libfa.la $(LIBXML_LIBS) $(GNULIB)
+fatest_LDADD = $(top_builddir)/src/libfa_plattform.la $(LIBXML_LIBS) $(GNULIB)
 
 test_xpath_SOURCES = test-xpath.c cutest.c cutest.h $(top_srcdir)/src/memory.c
-test_xpath_LDADD = $(top_builddir)/src/libaugeas.la $(LIBXML_LIBS) $(GNULIB)
+test_xpath_LDADD = $(top_builddir)/src/libaugeas_plattform.la $(LIBXML_LIBS) $(GNULIB)
 
 test_load_SOURCES = test-load.c cutest.c cutest.h $(top_srcdir)/src/memory.c $(top_srcdir)/src/memory.h
-test_load_LDADD = $(top_builddir)/src/libaugeas.la $(LIBXML_LIBS) $(GNULIB)
+test_load_LDADD = $(top_builddir)/src/libaugeas_plattform.la $(LIBXML_LIBS) $(GNULIB)
 
 test_save_SOURCES = test-save.c cutest.c cutest.h $(top_srcdir)/src/memory.c $(top_srcdir)/src/memory.h
-test_save_LDADD = $(top_builddir)/src/libaugeas.la $(LIBXML_LIBS) $(GNULIB)
+test_save_LDADD = $(top_builddir)/src/libaugeas_plattform.la $(LIBXML_LIBS) $(GNULIB)
 
 test_api_SOURCES = test-api.c cutest.c cutest.h $(top_srcdir)/src/memory.c $(top_srcdir)/src/memory.h
-test_api_LDADD = $(top_builddir)/src/libaugeas.la $(LIBXML_LIBS) $(GNULIB)
+test_api_LDADD = $(top_builddir)/src/libaugeas_plattform.la $(LIBXML_LIBS) $(GNULIB)
 
 test_run_SOURCES = test-run.c cutest.c cutest.h $(top_srcdir)/src/memory.c $(top_srcdir)/src/memory.h
-test_run_LDADD = $(top_builddir)/src/libaugeas.la $(LIBXML_LIBS) $(GNULIB)
+test_run_LDADD = $(top_builddir)/src/libaugeas_plattform.la $(LIBXML_LIBS) $(GNULIB)
 
 leak_SOURCES = leak.c
-leak_LDADD =  $(top_builddir)/src/libaugeas.la $(LIBXML_LIBS) $(GNULIB)
+leak_LDADD =  $(top_builddir)/src/libaugeas_plattform.la $(LIBXML_LIBS) $(GNULIB)
 
 FAILMALLOC_START ?= 1
 FAILMALLOC_REP   ?= 20

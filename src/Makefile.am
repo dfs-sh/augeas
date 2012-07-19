@@ -11,14 +11,14 @@ BUILT_SOURCES = datadir.h
 
 DISTCLEANFILES = datadir.h
 
-lib_LTLIBRARIES = libfa.la libaugeas.la
+lib_LTLIBRARIES = libfa_plattform.la libaugeas_plattform.la
 noinst_LTLIBRARIES = liblexer.la
 
 bin_PROGRAMS = augtool augparse
 
 include_HEADERS = augeas.h fa.h
 
-libaugeas_la_SOURCES = augeas.h augeas.c augrun.c pathx.c \
+libaugeas_plattform_la_SOURCES = augeas.h augeas.c augrun.c pathx.c \
 	internal.h internal.c \
 	memory.h memory.c ref.h ref.c \
     syntax.c syntax.h parser.y builtin.c lens.c lens.h regexp.c regexp.h \
@@ -33,19 +33,19 @@ else
   FA_VERSION_SCRIPT =
 endif
 
-libaugeas_la_LDFLAGS = $(AUGEAS_VERSION_SCRIPT) \
+libaugeas_plattform_la_LDFLAGS = $(AUGEAS_VERSION_SCRIPT) \
     -version-info $(LIBAUGEAS_VERSION_INFO)
-libaugeas_la_LIBADD = liblexer.la libfa.la $(LIB_SELINUX) $(LIBXML_LIBS) $(GNULIB)
+libaugeas_plattform_la_LIBADD = liblexer.la libfa_plattform.la $(LIB_SELINUX) $(LIBXML_LIBS) $(GNULIB)
 
 augtool_SOURCES = augtool.c
-augtool_LDADD = libaugeas.la $(READLINE_LIBS) $(LIBXML_LIBS) $(GNULIB)
+augtool_LDADD = libaugeas_plattform.la $(READLINE_LIBS) $(LIBXML_LIBS) $(GNULIB)
 
 augparse_SOURCES = augparse.c
-augparse_LDADD = libaugeas.la $(LIBXML_LIBS) $(GNULIB)
+augparse_LDADD = libaugeas_plattform.la $(LIBXML_LIBS) $(GNULIB)
 
-libfa_la_SOURCES = fa.c fa.h hash.c hash.h memory.c memory.h ref.h ref.c
-libfa_la_LIBADD = $(LIB_SELINUX) $(GNULIB)
-libfa_la_LDFLAGS = $(FA_VERSION_SCRIPT) -version-info $(LIBFA_VERSION_INFO)
+libfa_plattform_la_SOURCES = fa.c fa.h hash.c hash.h memory.c memory.h ref.h ref.c
+libfa_plattform_la_LIBADD = $(LIB_SELINUX) $(GNULIB)
+libfa_plattform_la_LDFLAGS = $(FA_VERSION_SCRIPT) -version-info $(LIBFA_VERSION_INFO)
 
 liblexer_la_SOURCES = lexer.l
 liblexer_la_CFLAGS = $(AM_CFLAGS) -Wno-error
