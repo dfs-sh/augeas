@@ -118,4 +118,4 @@ AC_OUTPUT(Makefile \
           examples/Makefile \
 	  doc/Makefile \
 	  doc/naturaldocs/Makefile \
-          augeas.pc augeas.spec)
+          augeas-plattform.pc augeas.spec)
